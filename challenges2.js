@@ -32,10 +32,10 @@ const farToCel = (f) => {
     const c = (f-32) * .5556;
     console.log(`${f}° in Farenheit is ${c}° in Celcius`);
 }
-farToCel(32);
-farToCel(40);
-farToCel(-40);
-farToCel(2);
+// farToCel(32);
+// farToCel(40);
+// farToCel(-40);
+// farToCel(2);
 
 //write out the function, give name, define parameter
 
@@ -51,5 +51,39 @@ const thisManyTimes = (word, num) => {
     }
 }
 
-thisManyTimes('Jeff', 15)
+// thisManyTimes('Jeff', 15)
 
+// const nums = [2, 6, 1, 5, 4, 9, 11]
+
+const twoSum = (myArray, target) => {
+    for (let i = 0; i < myArray.length; i++) {
+        const check = target - myArray[i];
+        for(let j = 0; j < myArray.length; j++ ){
+            if(myArray[j] === check){
+                return [i, j];
+            }
+        }
+    }
+}
+// console.log(twoSum(nums, 6));
+// console.log(twoSum(nums, 10));
+// console.log(twoSum(nums, 20));
+// console.log(twoSum(nums, 8));
+
+const nums = [2, 6, 1, 5, 4, 9, 11];
+
+const twoSumOneLoop = (myArray, target) => {
+    const differences = {}
+    for (let i = 0; i < myArray.length; i++){
+        const dif = target - myArray[i];
+        if(differences[dif] != undefined){
+            return [i, differences[String(dif)]]
+        } 
+        differences[myArray[i]] = i;
+    }
+}
+
+console.log(twoSumOneLoop(nums, 8));
+console.log(twoSumOneLoop(nums, 10));
+console.log(twoSumOneLoop(nums, 20));
+console.log(twoSumOneLoop(nums, 8));
