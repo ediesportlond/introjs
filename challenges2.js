@@ -91,11 +91,6 @@ const twoSumOneLoop = (myArray, target) => {
 //5. Write a function that takes a list of groceries as an array. Takes a number 1-4 and list that item.
 //    ["milk", "bread", "eggs", "juice"]
 
-const groceries = ["milk", "bread", "eggs", "juice"];
-function giveMeThis(list){
-    return list.length;
-}
-
 // console.log(giveMeThis(groceries));
 
 const isPalindrome = function(x) {
@@ -105,9 +100,7 @@ const isPalindrome = function(x) {
         let slice = x[i];
         reversedString = slice+reversedString;
     }
-    let output;
-    x === reversedString ? output = true: output = false;
-    return output;
+    return x === reversedString;
 };
 
 // console.log(isPalindrome(12345));
@@ -188,8 +181,19 @@ function addBinary(a, b){
     return result; 
 }
 
-console.log(addBinary('00111', '10101'));
-console.log(addBinary('10111', '10111'));
-console.log(addBinary('001111', '110101'));
-console.log(addBinary('0001111', '1011101'));
-console.log(addBinary('0100111', '1011101'));
+// console.log(addBinary('00111', '10101'));
+// console.log(addBinary('10111', '10111'));
+// console.log(addBinary('001111', '110101'));
+// console.log(addBinary('0001111', '1011101'));
+// console.log(addBinary('0100111', '1011101'));
+
+let digits = [1,2,3,4,5,6,7,8,9,0];
+
+const formatPhoneNum = (nums) => {
+    return `(${digits[0]}${digits[1]}${digits[2]}) ${digits[3]}${digits[4]}${digits[5]}-${digits[6]}${digits[7]}${digits[8]}${digits[9]}`;   
+}
+
+console.log(formatPhoneNum(digits));
+
+digits = [8,0,0,5,5,5,0,1,0,0];
+console.log(formatPhoneNum(digits));
